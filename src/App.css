@@ -249,7 +249,7 @@ body {
   }
 
   .auth-logo {
-    height: 50px !important;
+    display: none !important;
   }
 
   .auth-heading {

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Image } from "react-bootstrap";
 import * as Yup from "yup";
 import { Formik, Form } from "formik";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import LogoImg from "../../assets/logo/pharmacy-sm.png";
 import TextField from "../../shared/TextField";
@@ -10,18 +10,29 @@ import RateIcon from "../../assets/icons/@.svg";
 import PassIcon from "../../assets/icons/lock.svg";
 import EyeIcon from "../../assets/icons/eye.svg";
 import CloseEye from "../../assets/icons/eyeclose.svg";
+import { useDispatch } from "react-redux";
+import { userLogin } from "../../store/user/actions/actionCreators";
+
+const errorSchema = Yup.object().shape({
+  email: Yup.string().email().required("Email is required"),
+  password: Yup.string().required("Password is required"),
+});
 
 const LoginForm = () => {
+  const dispatch = useDispatch();
+  const navigation = useNavigate();
   const validValues = {
     email: "",
     password: "",
   };
-  const errorSchema = Yup.object().shape({
-    email: Yup.string().email().required("Email is required"),
-    password: Yup.string().required("Password is required"),
-  });
 
-  const loginHandler = (values) => {};
+  const loginHandler = (values) => {
+    const data = {
+      email: values.email,
+      password: values.password,
+    };
+    dispatch(userLogin(data, navigation));
+  };
 
   const [eye, setEye] = useState(false);
 

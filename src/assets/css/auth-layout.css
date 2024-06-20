@@ -1,0 +1,42 @@
+@media screen and (max-width: 991px) {
+    .auth-section-1>div.max-w-500px {
+        background: rgba(255, 255, 255, 0.09) !important;
+        backdrop-filter: blur(100px) !important;
+        border-radius: 10px;
+    }
+
+    .auth-section-1 {
+        background-image: url(../images/grid.svg) !important;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .auth-heading {
+        color: white !important;
+    }
+
+    .auth-subheading.text-dark {
+        color: white !important;
+    }
+}
+
+
+@media screen and (max-width: 576px) {
+    .auth-section-1 {
+        padding: 40px !important;
+    }
+
+    .auth-section-1 .form-space {
+        padding: 5px 30px !important;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .auth-section-1 .form-space {
+        padding: 5px 20px !important;
+    }
+
+    .auth-section-1 {
+        padding: 20px !important;
+    }
+}

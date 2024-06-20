@@ -1,7 +1,7 @@
 .field-container {
   border: 1px solid #e7e6e9;
   border-radius: 8px;
-  background-color: #fff !important;
+  background-color: #fff;
   margin-bottom: 4px !important;
 }
 
@@ -11,7 +11,7 @@
 
 .custom-field {
   border: none !important;
-  background-color: #fff !important;
+  background-color: #fff;
 }
 
 .mobile {
