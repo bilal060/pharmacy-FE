@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Image } from "react-bootstrap";
+import { Button, Image, Spinner } from "react-bootstrap";
 import * as Yup from "yup";
 import { Formik, Form } from "formik";
 import { Link, useNavigate } from "react-router-dom";
@@ -10,7 +10,7 @@ import RateIcon from "../../assets/icons/@.svg";
 import PassIcon from "../../assets/icons/lock.svg";
 import EyeIcon from "../../assets/icons/eye.svg";
 import CloseEye from "../../assets/icons/eyeclose.svg";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { userLogin } from "../../store/user/actions/actionCreators";
 
 const errorSchema = Yup.object().shape({
@@ -21,6 +21,8 @@ const errorSchema = Yup.object().shape({
 const LoginForm = () => {
   const dispatch = useDispatch();
   const navigation = useNavigate();
+  const isLoading = useSelector((state) => state.user.isLoading);
+
   const validValues = {
     email: "",
     password: "",
@@ -106,10 +108,15 @@ const LoginForm = () => {
                 <p className="text-black text-end">Forgot Password</p>
               </Link>
               <Button
+                disabled={isLoading}
                 type="submit"
                 className="w-100 mt-3 h-56px gradient-btn-orange"
               >
-                Login
+                {isLoading ? (
+                  <Spinner animation="border" variant="light" />
+                ) : (
+                  "Login"
+                )}
               </Button>
             </Form>
           )}
