@@ -1,0 +1,36 @@
+
+  .text-logo {
+    font-family: "Fira Mono", monospace;
+    font-weight: 700;
+    font-size: 25px;
+    color: white;
+    margin: 0;
+  }
+  
+
+  .flicker {
+    animation: flicker 3s linear infinite;
+  }
+  
+  @keyframes flicker {
+    0%, 19.9%, 22%, 62.9%, 64%, 64.9%, 70%, 100% {
+      opacity: 0.99;
+      text-shadow: 
+        -1px -1px 0 rgba(255,255,255, 0.4), 
+        1px -1px 0 rgba(255,255,255, 0.4), 
+        -1px 1px 0 rgba(255,255,255, 0.4), 
+        1px 1px 0 rgba(255,255,255, 0.4), 
+        0 -2px 8px, 
+        0 0 2px, 
+        0 0 5px #ff7e00, 
+        0 0 15px #ff4444, 
+        0 0 2px #ff7e00, 
+        0 2px 3px #000;
+    }
+    20%, 21.9%, 63%, 63.9%, 65%, 69.9% {
+      opacity: 0.4;
+      text-shadow: none;
+    }
+  }
+  
+  
