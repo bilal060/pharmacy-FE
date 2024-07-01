@@ -1,8 +1,6 @@
-import React from 'react'
-import MainLayout from '../layout/MainLayout'
-import DrugTable from '../components/drug/DrugTable';
-
-
+import React from "react";
+import MainLayout from "../layout/MainLayout";
+import DrugTable from "../components/drug/DrugTable";
 
 const Drug = () => {
   return (
@@ -13,6 +11,6 @@ const Drug = () => {
       </div>
     </>
   );
-}
+};
 
-export default MainLayout(Drug)
+export default MainLayout(Drug);
