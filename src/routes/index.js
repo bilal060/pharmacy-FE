@@ -1,6 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Navigate, Route, Routes } from "react-router-dom";
+const Clinic = React.lazy(() => import("../pages/Clinic.js"));
+const Drug = React.lazy(() => import("../pages/Drug.js"));
+const User = React.lazy(() => import("../pages/User.js"));
 const Home = React.lazy(() => import("../pages/Home.js"));
 const LoginPage = React.lazy(() => import("../pages/Login.js"));
 const SignupPage = React.lazy(() => import("../pages/Signup.js"));
@@ -12,6 +15,9 @@ function NavigationRoutes() {
     <>
       <Route path="/*" element={<Navigate to="/home" replace />} />
       <Route path="/home" element={<Home />} />
+      <Route exact path="/clinic" element={<Clinic />}></Route>
+      <Route exact path="/drug" element={<Drug />}></Route>
+      <Route exact path="/user" element={<User />}></Route>
     </>
   );
   const payerRoutes = (
