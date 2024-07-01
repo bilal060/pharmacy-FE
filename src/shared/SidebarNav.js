@@ -29,8 +29,8 @@ const SidebarNav = ({ toggled, setToggled }) => {
 
       <Menu className="mt-4 gap-2">
         <MenuItem
-          component={<Link to="/home" className="menu-item-link" />}
-          active={location.pathname === "/home" && true}
+          component={<Link to="/" className="menu-item-link" />}
+          active={location.pathname === "/" && true}
         >
           <span className="menu-icon">
             <HomeIcon width="25px" height="25px" />

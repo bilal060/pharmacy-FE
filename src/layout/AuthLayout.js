@@ -3,7 +3,7 @@ import { Col, Container, Image, Row } from "react-bootstrap";
 import ErrorBoundary from "../shared/ErrorBoundary";
 import ErrorBoundaryAlert from "../shared/ErrorBoundaryAlert";
 import grid from "../assets/images/grid.svg";
-import '../assets/css/auth-layout.css'
+import "../assets/css/auth-layout.css";
 
 const AuthLayout = (WrappedComponent) => {
   return function AuthLayoutHoc(props) {
@@ -12,7 +12,7 @@ const AuthLayout = (WrappedComponent) => {
         <div className="full-height-section">
           <Container fluid className="p-0">
             <Row className="m-0 h-100">
-              <Col xs="12" lg="5" className="auth-section-1 py-5 px-0">
+              <Col xs="12" lg="5" xl="4" className="auth-section-1 py-5 px-0">
                 <ErrorBoundary fallback={<ErrorBoundaryAlert />}>
                   <WrappedComponent {...props} />
                 </ErrorBoundary>
@@ -20,6 +20,7 @@ const AuthLayout = (WrappedComponent) => {
               <Col
                 xs="12"
                 lg="7"
+                xl="8"
                 className="d-lg-block d-none auth-section-2 text-center px-0"
               >
                 <Image src={grid} className="h-100 w-100" />

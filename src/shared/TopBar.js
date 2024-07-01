@@ -5,8 +5,15 @@ import "../assets/css/topbar.css";
 import UserIcon from "../assets/images/user.png";
 import Logo from "../components/logo/Logo";
 import MenuBarIcon from "../assets/icons/MenuBar";
+import { useDispatch, useSelector } from "react-redux";
+import { userLogout } from "../store/user/actions/actionCreators";
+import { useNavigate } from "react-router-dom";
 
 const TopBar = ({ toggled, setToggled }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const userType = useSelector((state) => state?.user?.user?.user?.role);
+
   return (
     <Row className="py-3 px-4 m-0 topbar">
       <Col className="logoIcon">
@@ -47,7 +54,9 @@ const TopBar = ({ toggled, setToggled }) => {
               </div>
             </Dropdown.Toggle>
             <Dropdown.Menu align="end">
-              <Dropdown.Item>
+              <Dropdown.Item
+                onClick={() => dispatch(userLogout(navigate, userType))}
+              >
                 <Button className="bg-transparent border-0 text-dark p-0 d-flex align-items-center gap-2">
                   Logout
                 </Button>

@@ -29,6 +29,7 @@ const UserReducer = (state = initialState, action) => {
       return {
         isLogin: false,
         user: {},
+        isLoading: false,
       };
     default:
       return state;

@@ -32,7 +32,6 @@ const RegisterForm = () => {
   const navigation = useNavigate();
   const dispatch = useDispatch();
   const isLoading = useSelector((state) => state?.user?.isLoading);
-  console.log(isLoading);
   const validValues = {
     name: "",
     email: "",

@@ -13,8 +13,8 @@ function NavigationRoutes() {
   const isLoginned = useSelector((users) => users?.user?.isLogin);
   const adminRoutes = (
     <>
-      <Route path="/*" element={<Navigate to="/home" replace />} />
-      <Route path="/home" element={<Home />} />
+      <Route path="/*" element={<Navigate to="/" replace />} />
+      <Route path="/" element={<Home />} />
       <Route exact path="/clinic" element={<Clinic />}></Route>
       <Route exact path="/drug" element={<Drug />}></Route>
       <Route exact path="/user" element={<User />}></Route>
